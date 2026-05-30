@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- SPDX-License-Identifier: MIT -->
+<!-- Copyright (c) 2026 RezaLabs -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Screenshots</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="bar">
+    <svg class="bar-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="10" r="5.5"/>
+      <circle cx="12" cy="10" r="2.5"/>
+      <circle cx="14" cy="8" r="1" fill="currentColor"/>
+      <path d="M4 7l2-2h12l2 2M4 17l-1-1M20 17l1-1"/>
+    </svg>
+    <span class="bar-title">Screenshots</span>
+  </header>
+
+  <!-- Capture Modes -->
+  <section class="modes">
+    <button id="btn-visible" class="mode" data-mode="visible" title="Capture visible tab">
+      <svg class="mode-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="4" width="20" height="13" rx="2"/>
+        <path d="M9 17l1 3h4l1-3"/>
+        <path d="M8 10l2-2 2 2 4-4"/>
+      </svg>
+      <span class="mode-label">Visible Tab</span>
+      <span class="mode-key">V</span>
+    </button>
+
+    <button id="btn-fullpage" class="mode" data-mode="fullpage" title="Capture full page">
+      <svg class="mode-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="4" width="20" height="13" rx="2"/>
+        <path d="M9 17l1 3h4l1-3"/>
+        <path d="M6 8L8 6 10 8 14 4"/>
+      </svg>
+      <span class="mode-label">Full Page</span>
+      <span class="mode-key">F</span>
+    </button>
+
+    <button id="btn-area" class="mode" data-mode="area" title="Select area to capture">
+      <svg class="mode-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="3" width="18" height="18" rx="1"/>
+        <path d="M9 3v18M15 3v18M3 9h18M3 15h18"/>
+      </svg>
+      <span class="mode-label">Select Area</span>
+      <span class="mode-key">A</span>
+    </button>
+  </section>
+
+  <!-- Divider -->
+  <div class="sep"></div>
+
+  <!-- Preview -->
+  <section id="preview-section" class="prev hidden">
+    <div class="prev-wrap">
+      <img id="preview-image" class="prev-img" alt="Screenshot preview">
+      <button id="btn-copy" class="prev-copy" title="Copy to clipboard" aria-label="Copy screenshot to clipboard">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2"/>
+          <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+        </svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- Footer Status -->
+  <footer class="ftr">
+    <span id="status" class="status"></span>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>
